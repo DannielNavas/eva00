@@ -1,0 +1,26 @@
+.container {
+    height: 36px;
+    width: 100%;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+}
+
+.row {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+img {
+    border-radius: 9999px;
+    width: 66px;
+    object-fit: cover;
+    margin-top: 8px;
+}
+
+h1 {
+    margin: 0;
+}

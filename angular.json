@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -107,6 +107,7 @@
     }
   },
   "cli": {
-    "analytics": "624d3def-26f7-4406-a52f-0e4decfbce70"
+    "analytics": "624d3def-26f7-4406-a52f-0e4decfbce70",
+    "packageManager": "yarn"
   }
 }

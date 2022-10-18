@@ -1,0 +1,11 @@
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="ingresosForm" >
+    <mat-form-field appearance="outline">
+        <mat-label>Tipo</mat-label>
+        <input matInput placeholder="tipo" type="text" formControlName="motivo">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Valor*</mat-label>
+        <input matInput placeholder="Valor" type="text" formControlName="valor" [inputMask]="currencyInputMask">
+    </mat-form-field>
+    <button mat-button color="primary" type="submit">Guardar</button>
+</form>

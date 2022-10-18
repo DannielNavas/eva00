@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row">
+        <img [src]="dataUser.photoURL" [alt]="dataUser.email" referrerpolicy="no-referrer">
+        <h1>Hola {{dataUser.displayName}}</h1>
+        <button mat-button color="warn" (click)="logout()">Salir</button>
+    </div>
+</div>
