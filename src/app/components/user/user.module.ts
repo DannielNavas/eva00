@@ -7,13 +7,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputMaskModule } from '@ngneat/input-mask';
+import { ModalEgresosComponent } from './modal-egresos/modal-egresos.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
 @NgModule({
   declarations: [
     PanelUserComponent,
-    ModalIngresoComponent
+    ModalIngresoComponent,
+    ModalEgresosComponent
   ],
   imports: [
       CommonModule,
@@ -21,7 +25,9 @@ import { InputMaskModule } from '@ngneat/input-mask';
       MatInputModule,
       MatFormFieldModule,
       ReactiveFormsModule,
-      InputMaskModule
+      InputMaskModule,
+      MatSelectModule,
+      MatCheckboxModule
     ],
   exports: [
     PanelUserComponent

@@ -1,0 +1,24 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+    <ng-container matColumnDef="tipo">
+        <mat-header-cell *matHeaderCellDef> Tipo. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.tipo}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="valor">
+        <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.valor}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="mes">
+        <mat-header-cell *matHeaderCellDef> Mes </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.mes}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="pago">
+        <mat-header-cell *matHeaderCellDef> Pago recurrente </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.recurrente ? 'Si': 'No'}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+<h1>Total egresos {{ total | currency }}</h1>

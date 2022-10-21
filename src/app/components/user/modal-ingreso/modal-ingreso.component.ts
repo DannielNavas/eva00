@@ -7,9 +7,9 @@ import { createMask } from '@ngneat/input-mask';
 
 
 @Component({
-  selector: 'app-modal-ingreso',
-  templateUrl: './modal-ingreso.component.html',
-  styleUrls: ['./modal-ingreso.component.scss']
+    selector: 'app-modal-ingreso',
+    templateUrl: './modal-ingreso.component.html',
+    styleUrls: ['./modal-ingreso.component.scss']
 })
 export class ModalIngresoComponent implements OnInit {
     ingresosForm!: FormGroup;
@@ -25,22 +25,22 @@ export class ModalIngresoComponent implements OnInit {
 
     ngOnInit(): void {
         this.initFormIngresos();
-  }
+    }
 
     initFormIngresos(): void {
-        this.ingresosForm = this.formBuild.group({
+        this.ingresosForm = this.formBuild.nonNullable.group({
             motivo: ['', [Validators.required]],
             valor: [0, [Validators.required]],
         })
     }
 
     onSubmit(): void {
-        debugger;
         if (this.ingresosForm.valid) {
             this.sendDataFirebase();
         }
     }
     sendDataFirebase() {
-        this.firebaseService.create(this.ingresosForm.value).then(data => this.toastService.success('Se ha creado correctamente')).catch(err => console.log(err));
+        this.ingresosForm.get('valor')?.setValue(this.ingresosForm.get('valor')?.value.replace(/\D/g, ''));
+        this.firebaseService.create(this.ingresosForm.value).then(data => { this.toastService.success('Se ha creado correctamente'); this.toastService.success('Registrado exitosamente') }).catch(err => console.log(err));
     }
 }

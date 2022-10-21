@@ -1,0 +1,24 @@
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="formEgresos">
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Tipo</mat-label>
+        <input matInput placeholder="tipo" type="text" formControlName="tipo">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Valor*</mat-label>
+        <input matInput placeholder="Valor" type="text" formControlName="valor" [inputMask]="currencyInputMask">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Mes</mat-label>
+        <mat-select formControlName="mes" >
+            <mat-option *ngFor="let mes of meses" [value]="mes">{{mes}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <section class="inputs">
+        <mat-checkbox  formControlName="recurrente" >Pago recurrente</mat-checkbox>
+    </section>
+
+    <button mat-button color="accent" type="button" (click)="dialogRef.close()">Cancelar</button>
+    <button mat-button color="primary" type="submit">Guardar</button>
+</form>

@@ -4,23 +4,25 @@ import { CommonModule } from '@angular/common';
 import { PanelRoutingModule } from './panel-routing.module';
 import { PanelComponent } from './panel.component';
 import { UserModule } from '@components/user/user.module';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TableIngresosModule } from '@components/table-ingresos/table-ingresos.module';
+import { TableEgresosModule } from '@components/table-egresos/table-egresos.module';
 
 
 
 @NgModule({
-  declarations: [
-    PanelComponent
-  ],
-  imports: [
-    CommonModule,
-      PanelRoutingModule,
-      UserModule,
-      MatButtonModule,
-      MatDialogModule,
-      TableIngresosModule
-  ]
+    declarations: [
+        PanelComponent
+    ],
+    imports: [
+        CommonModule,
+        PanelRoutingModule,
+        UserModule,
+        MatButtonModule,
+        MatDialogModule,
+        TableIngresosModule,
+        TableEgresosModule
+    ]
 })
 export class PanelModule { }
